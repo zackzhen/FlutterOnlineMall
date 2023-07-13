@@ -5,6 +5,7 @@ import 'package:untitled/ListViewBbb.dart';
 import 'package:untitled/util/navigator_util.dart';
 
 import 'HomePage.dart';
+import 'MineInfoPage.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -14,24 +15,26 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  
-  
-  String _getTitleName(index){
+  String _getTitleName(index) {
     var _hoem = "首页";
-    switch(index){
+    switch (index) {
       case 0:
         _hoem = "首页";
         break;
       case 1:
-        _hoem = "社区";
+        _hoem = "分类";
         break;
       case 2:
+        _hoem = "购物车";
+        break;
+      case 3:
         _hoem = "我的";
         break;
     }
-    
+
     return _hoem;
   }
+
   DateTime? _lastPressedAt; // 上次点击时间
 
   // 退出app
@@ -49,47 +52,66 @@ class _MainPageState extends State<MainPage> {
     }
     return Future.value(true);
   }
+  var _currentPageIndex = 0;
+  var _pageController = PageController(initialPage: 0);
+  var _pageList = [HomePage(), ListViewBbb(), ListViewBbb(), MineInfoPage()];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // appBar: AppBar(title: Text(_getTitleName(0)),),
 
+    return Scaffold(
       body: WillPopScope(
         onWillPop: exitApp,
-        child: PageView(
-            children:<Widget>[
-              HomePage(),
-              ListViewBbb()
-
-            ]
-
-        ),
+        child: PageView.builder(
+            controller: _pageController,
+            onPageChanged: (index) {
+              setState(() {
+                _currentPageIndex = index;
+              });
+            },
+            itemCount: _pageList.length,
+            itemBuilder: (context, index) {
+              return _pageList.elementAt(index);
+            }),
       ),
-
       bottomNavigationBar: BottomNavigationBar(
-        selectedFontSize: 12,
-        unselectedFontSize: 12,
+        type: BottomNavigationBarType.fixed,
+        currentIndex: _currentPageIndex,
+
+          // // 选中图标主题
+          // selectedIconTheme: IconThemeData(
+          //   // 图标颜色
+          //   color: Colors.red,
+          //   // 图标大小
+          //   size: 32,
+          //   // 图标透明度
+          //   opacity: 1.0,
+          // ),
+          // // 未选中图标主题
+          // unselectedIconTheme: IconThemeData(
+          //   color: Colors.blue,
+          //   size: 24,
+          //   opacity: 0.5,
+          // ),
+
         onTap: (index) {
-         NavigatorUtil.push(context, FormTest());
+          _pageController.animateToPage(index,
+              duration: const Duration(milliseconds: 300), curve: Curves.ease);
+          setState(() {
+            _currentPageIndex = index;
+          });
         },
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              label:_getTitleName(0),
-            icon: Icon(Icons.home)
-          ),
+              label: _getTitleName(0), icon: Icon(Icons.home)),
           BottomNavigationBarItem(
-              label:_getTitleName(1),
-              icon: Icon(Icons.message)
-          ),
+              label: _getTitleName(1), icon: Icon(Icons.fastfood)),
           BottomNavigationBarItem(
-              label:_getTitleName(2),
-              icon: Icon(Icons.account_circle)
-          )
-
+              label: _getTitleName(2), icon: Icon(Icons.shopping_cart)),
+          BottomNavigationBarItem(
+              label: _getTitleName(3), icon: Icon(Icons.account_circle))
         ],
       ),
-      
     );
   }
 }

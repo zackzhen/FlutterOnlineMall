@@ -60,11 +60,16 @@ class _FormTestState extends State<FormTest> {
     return Scaffold(
 
       appBar: AppBar(title:const Text('用户登录'),
+      actions: [
+        IconButton(onPressed: (){
+
+        }, icon: Text("注册",
+        style: TextStyle(
+          fontSize: 16,
+        ),))
+      ],
       leading: BackButton(
         onPressed: (){
-          setState(() {
-            
-          });
          Navigator.pop(context);
         },
         color: Colors.white,
