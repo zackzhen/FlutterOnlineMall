@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:untitled/FormTestRoute.dart';
-import 'package:untitled/ListViewBbb.dart';
+import 'package:untitled/GoodsPage.dart';
 import 'package:untitled/util/navigator_util.dart';
 
+import 'CartPage.dart';
 import 'HomePage.dart';
 import 'MineInfoPage.dart';
 
@@ -54,7 +55,7 @@ class _MainPageState extends State<MainPage> {
   }
   var _currentPageIndex = 0;
   var _pageController = PageController(initialPage: 0);
-  var _pageList = [HomePage(), ListViewBbb(), ListViewBbb(), MineInfoPage()];
+  var _pageList = [HomePage(), GoodsPage(), CartPage(), MineInfoPage()];
 
   @override
   Widget build(BuildContext context) {

@@ -1,17 +1,13 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 
-// class ListViewBbb extends StatelessWidget {
-
-class ListViewBbb extends StatefulWidget {
-  const ListViewBbb({super.key});
+class GoodsPage extends StatefulWidget {
+  const GoodsPage({super.key});
 
   @override
-  State<ListViewBbb> createState() => _ListViewBbbState();
+  State<GoodsPage> createState() => _GoodsPageState();
 }
 
-class _ListViewBbbState extends State<ListViewBbb> {
+class _GoodsPageState extends State<GoodsPage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
@@ -19,7 +15,7 @@ class _ListViewBbbState extends State<ListViewBbb> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: Text("商品列表"),
+        title: Text("商品分类"),
         centerTitle: true,
         // actions: [
         //   IconButton(onPressed: () {
@@ -33,23 +29,23 @@ class _ListViewBbbState extends State<ListViewBbb> {
         // ),
       ),
       drawer: Drawer(
-      child: ListView(
-        children: [
-          ListTile(
-            title: Text("支持"),
-            onTap: () {},
-          ),
-          ListTile(
-            title: Text("支持"),
-            onTap: () {},
-          ),
-          CheckboxListTile(
-              value: true, title: Text("参数一"), onChanged: (value) {}),
-          CheckboxListTile(
-              value: true, title: Text("参数二"), onChanged: (value) {}),
-        ],
+        child: ListView(
+          children: [
+            ListTile(
+              title: Text("支持"),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text("支持"),
+              onTap: () {},
+            ),
+            CheckboxListTile(
+                value: true, title: Text("参数一"), onChanged: (value) {}),
+            CheckboxListTile(
+                value: true, title: Text("参数二"), onChanged: (value) {}),
+          ],
+        ),
       ),
-    ),
       body: ListView.builder(
           itemCount: 10,
           itemBuilder: (BuildContext context, int index) {
