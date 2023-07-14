@@ -1,16 +1,7 @@
-# untitled
+# Flutter 与 原生代码 的相互调用
+https://www.jianshu.com/p/9c1e14fc16ec
 
-A new Flutter project.
+![alt 属性文本]([image https://github.com/zackzhen/FlutterOnlineMall/blob/main/Screenshot_20230714_160759.png])
+![alt 属性文本]([image https://github.com/zackzhen/FlutterOnlineMall/blob/main/Screenshot_20230714_175140.png])
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
