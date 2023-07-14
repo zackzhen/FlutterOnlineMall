@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class GoodsPage extends StatefulWidget {
   const GoodsPage({super.key});
@@ -9,7 +10,19 @@ class GoodsPage extends StatefulWidget {
 
 class _GoodsPageState extends State<GoodsPage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  // 创建渠道
+  var channel = const MethodChannel("your_channel_name");
 
+  void callNativeMethod(String msg) {
+    try {
+      // 通过渠道，调用原生代码代码的方法
+      Future future = channel.invokeMethod("your_method_name", {"msg": msg} );
+      // 打印执行的结果
+      print(future.toString());
+    } on PlatformException catch(e) {
+      print(e.toString());
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,8 +45,10 @@ class _GoodsPageState extends State<GoodsPage> {
         child: ListView(
           children: [
             ListTile(
-              title: Text("支持"),
-              onTap: () {},
+              title: Text("原生通信"),
+              onTap: () {
+                callNativeMethod("ss");
+              },
             ),
             ListTile(
               title: Text("支持"),

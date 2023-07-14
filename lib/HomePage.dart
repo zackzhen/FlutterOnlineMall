@@ -98,49 +98,49 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      ButtonBar(
-        alignment: MainAxisAlignment.center,
-        children: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.phone)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.sms)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.phone)),
-        ],
-      ),
-      Wrap(
-        children: [
-          Chip(label: Text("test")),
-          Chip(label: Text("abc")),
-          Chip(label: Text("efg")),
-        ],
-      ),
-      Wrap(
-        children: [
-          Checkbox(value: true, onChanged: (value) {}),
-          Checkbox(value: true, onChanged: (value) {}),
-          Checkbox(value: true, onChanged: (value) {}),
-        ],
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        // crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          CircleAvatar(
-            child: Icon(Icons.person),
-          ),
-          const SizedBox(
-            width: 8,
-          ),
-          CircleAvatar(
-            child: Text("郑"),
-          )
-        ],
-      ),
-          Divider(
-            thickness: 1,
-            color: Colors.grey,
-            indent: 40,
-            endIndent: 40,
-          )
+      // ButtonBar(
+      //   alignment: MainAxisAlignment.center,
+      //   children: [
+      //     IconButton(onPressed: () {}, icon: Icon(Icons.phone)),
+      //     IconButton(onPressed: () {}, icon: Icon(Icons.sms)),
+      //     IconButton(onPressed: () {}, icon: Icon(Icons.phone)),
+      //   ],
+      // ),
+      // Wrap(
+      //   children: [
+      //     Chip(label: Text("test")),
+      //     Chip(label: Text("abc")),
+      //     Chip(label: Text("efg")),
+      //   ],
+      // ),
+      // Wrap(
+      //   children: [
+      //     Checkbox(value: true, onChanged: (value) {}),
+      //     Checkbox(value: true, onChanged: (value) {}),
+      //     Checkbox(value: true, onChanged: (value) {}),
+      //   ],
+      // ),
+      // Row(
+      //   mainAxisAlignment: MainAxisAlignment.center,
+      //   // crossAxisAlignment: CrossAxisAlignment.center,
+      //   children: [
+      //     CircleAvatar(
+      //       child: Icon(Icons.person),
+      //     ),
+      //     const SizedBox(
+      //       width: 8,
+      //     ),
+      //     CircleAvatar(
+      //       child: Text("郑"),
+      //     )
+      //   ],
+      // ),
+      //     Divider(
+      //       thickness: 1,
+      //       color: Colors.grey,
+      //       indent: 40,
+      //       endIndent: 40,
+      //     )
     ]));
   }
 }
