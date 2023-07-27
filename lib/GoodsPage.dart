@@ -52,12 +52,25 @@ class _GoodsPageState extends State<GoodsPage> {
             ),
             ListTile(
               title: Text("支持"),
+              subtitle: Text("no"),
+                leading: IconButton(
+                  onPressed: (){
+
+                  },
+                  icon: Icon(Icons.abc),
+                ),
+
+              // contentPadding: EdgeInsets.all(20),
               onTap: () {},
             ),
             CheckboxListTile(
                 value: true, title: Text("参数一"), onChanged: (value) {}),
             CheckboxListTile(
                 value: true, title: Text("参数二"), onChanged: (value) {}),
+            ElevatedButton.icon(onPressed: (){}, icon: Icon(Icons.abc), label: Text("click me")),
+            TextButton(onPressed: (){}, child: Text("ss"),),
+            TextButton(onPressed: (){}, child: Text("ss"),)
+
           ],
         ),
       ),
